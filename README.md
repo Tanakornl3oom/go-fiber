@@ -3,7 +3,7 @@
 ## installation
 
 - install go
-- install glide
+- install glide ( https://glide.sh/ )
 - install gomon or gin or go reload ....
 - export path
 
