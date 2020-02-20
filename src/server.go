@@ -115,9 +115,28 @@ func main() {
 
 
 
-  app.Delete("/user",func(c *fiber.Ctx) {
-
-    c.Send(true)
+  app.Delete("/user/:id",func(c *fiber.Ctx) {
+    if c.Params("id") == ""  {  // require id 
+      c.Send("required id")
+    }else{
+      if c.Params("id") == ""  {
+        c.Send("required id")
+      }else{
+        id, e := strconv.Atoi(c.Params("id"))
+        if e != nil {
+          c.Send("id should be number")
+        }else{
+            var user = db.GetUserById(dbConn,id)
+            if user.ID == 0 {
+              c.Send("user id : "+strconv.Itoa(id)+" not found ")
+            }else{
+              var editUserResponse db.Response 
+              editUserResponse = db.DeleteUser(dbConn,id)
+              c.Send(editUserResponse.Response)
+            }
+        }
+    }
+  }
   })
 
 

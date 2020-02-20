@@ -146,17 +146,23 @@ func UpdateUser(db *sql.DB,user Usersdata) Response {
 	}
 }
 
-func DeleteUser(db *sql.DB,user Usersdata) bool {
-	// statement, _ := db.Prepare(`INSERT INTO user ( firstname, lastname, age
-	// 	)VALUES (?,?,?)`)
+func DeleteUser(db *sql.DB,id int) Response {
+	statement, _ := db.Prepare(`DELETE FROM USER WHERE id = ?`)
 
-	// _, err := statement.Exec(user.Firstname,user.Lastname,user.Age)
+	_, err := statement.Exec(id)
 
-	// if err != nil {
-	// 	panic(err.Error())
-	// 	return false
-	// }
-	return true
+	var response Response
+	if err != nil {
+		panic(err.Error())
+		response.Status = false
+		response.Response = "can't delete user"
+		return response
+	}else{
+		response.Status = true
+		response.Response = "Success delete user"
+		return response
+	}
+	
 }
 
 func PrettyPrint(i interface{}) string {
