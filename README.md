@@ -1,5 +1,12 @@
 # go-fiber
 
+create CRUD web service with go-fiber
+
+## prerequisites
+
+- golang
+- docker
+
 ## installation
 
 - install go
@@ -17,4 +24,5 @@
 
 ## run
 
+- docker-compose up ( run db )
 - go run server.go or gomon
