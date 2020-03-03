@@ -4,12 +4,14 @@ import ("github.com/gofiber/fiber"
         "go-fiber/src/db"
         "strconv"
         "encoding/json"
+        "go-fiber/src/middleware"
         )
 
 
 func main() {
   // Create new Fiber instance:
   app := fiber.New()
+  app.Use(middleware.Cors())
 
   dbConn := db.ConnectDB()
   // Create route on root path, "/":
@@ -157,5 +159,5 @@ func main() {
   })
 
   // Start server on "localhost" with port "8080":
-  app.Listen(8080)
+  app.Listen(8084)
 }

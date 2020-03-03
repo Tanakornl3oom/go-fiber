@@ -1,5 +1,5 @@
 hash: d3db4c8d636980e8f83d4db06be7332c27666ec2e82aaf82a311dfa3239b64a7
-updated: 2020-02-19T15:51:48.961105+07:00
+updated: 2020-03-03T16:37:56.204688+07:00
 imports:
 - name: github.com/aymerick/raymond
   version: b565731e1464263de0bda75f2e45d97b54b60110
@@ -26,7 +26,7 @@ imports:
 - name: github.com/json-iterator/go
   version: 7acbb404a45be33f136d6f16fe8f86ca30f1008d
 - name: github.com/klauspost/compress
-  version: c286dbb933e7fbc599b4e347b1a863f14f54223c
+  version: 022415c7cabcefa1c24832ebdf8598a41008e77a
   subpackages:
   - flate
   - gzip
@@ -38,7 +38,7 @@ imports:
 - name: github.com/valyala/bytebufferpool
   version: cdfbe9377474227bb42120c1e22fd4433e7f69bf
 - name: github.com/valyala/fasthttp
-  version: aa96a4709d207f26bd265b6762c88301136b990a
+  version: 695f713fcf594b33fd8c126cfa8dc9f119d4391b
   subpackages:
   - fasthttputil
   - reuseport
